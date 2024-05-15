@@ -27,13 +27,15 @@ class Group(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(155),nullable=False)
 
-class Purchase(Base):
-    __tablename__ = "purchases"
+class Appeals(Base):
+    __tablename__ = "appeals"
     id = Column(Integer, primary_key=True)
-    tg_id = Column(BigInteger,nullable=False)
+    tg_id = Column(BigInteger)
     service_id = Column(ForeignKey("services.id"))
+    name = Column(String(155))
+    phone = Column(String(155))
+    message = Column(String(255))
     date = Column(DateTime,default=datetime.utcnow)
-
 
 class Logs(Base):
     __tablename__ = "logs"

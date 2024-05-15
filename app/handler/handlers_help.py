@@ -3,7 +3,7 @@ from aiogram.types import Message, CallbackQuery
 from aiogram.filters import Command
 import asyncio
 
-from config import TOKEN
+from config import TOKEN, OWNER
 from app.buttons.button import inline_keyboard_with_back_button
 
 bot = Bot(token=TOKEN)
@@ -41,7 +41,7 @@ async def process_techsupport_question(message: Message):
         user_id = message.from_user.id
         username = message.from_user.username
 
-        recipient_id = '6269988022'
+        recipient_id = OWNER
         user_link = f"Вопрос: {question}\nОтправлен от пользователя: https://t.me/{username}" if username else f"user_id: {user_id}"
         await bot.send_message(recipient_id, user_link)
         sent_message = await message.reply("Ваш вопрос был отправлен. В ближайшее время с вами свяжется наша техподдержка.")

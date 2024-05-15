@@ -12,13 +12,15 @@ inline_keyboard = InlineKeyboardMarkup(inline_keyboard=inline_buttons)
 
 
 inline_buttons_with_back = [
-    [InlineKeyboardButton(text="Назад", callback_data="back_to_main_menu")]
+    [InlineKeyboardButton(text="В меню", callback_data="back_to_main_menu")]
 ]
 inline_keyboard_with_back_button = InlineKeyboardMarkup(inline_keyboard=inline_buttons_with_back)
 
 
 inline_buttons_back_to_services = [
-    [InlineKeyboardButton(text="Купить", callback_data="pay")], # я хотел подключить покупку но не получилось 
+    [InlineKeyboardButton(text="Отправить данные для связи", callback_data="Send_data")], # я хотел подключить покупку но не получилось 
     [InlineKeyboardButton(text="Назад", callback_data="Services")]
 ]
 inline_keyboard_back_to_services = InlineKeyboardMarkup(inline_keyboard=inline_buttons_back_to_services)
+
+ 
